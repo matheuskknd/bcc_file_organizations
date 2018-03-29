@@ -24,7 +24,7 @@ function main(){
 	if [ ! -f cep_ordenado.dat ] ; then
 		echo "Base de dados não encontrada!"
 		echo "Se você não tiver o arquivo cep_ordenado.dat pode baixá-lo no seguinte endereço:"
-		echo "https://"
+		echo "https://mega.nz/#!vnpEjRqS!AjZou1g2_vdqE_-Z7ELdwqC7qIK5RNeN530wtYGCZDY"
 		encerrar
 	else
 		./cep_solver.run cep_ordenado.dat $1
