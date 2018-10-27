@@ -44,7 +44,7 @@ function main(){
 
 	./hyper_sort_concatenator.run ${sub_files[@]}
 
-	rm 'hyper_sort_concatenator.run'
+	rm -rf 'hyper_sort_concatenator.run'
 
 return 0;}
 

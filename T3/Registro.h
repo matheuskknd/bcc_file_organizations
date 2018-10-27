@@ -25,7 +25,7 @@ public: /* Methods */
 	Registro(void) = default;	//Default constructor;
 	~Registro() = default;
 
-	Registro( FILE * const stream) noexcept{ fread(this,sizeof(char),sizeof(Registro),stream);}	//Reading initializer constructor;
+	inline Registro( FILE * const stream) noexcept{ fread(this,sizeof(char),sizeof(Registro),stream);}	//Reading initializer constructor;
 	Registro(int) noexcept;		//Zero initializer constructor;
 
 	inline natural fill_reading_from( FILE * const stream) noexcept{ return fread(this,sizeof(char),sizeof(Registro),stream);}

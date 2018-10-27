@@ -142,24 +142,7 @@ void ordenar_salvar( FILE ** const & old_files, const size_t NbOlds, FILE ** con
 		for( size_t j = 0; j != nb_rgstr; ++j)
 			array[j] = new Registro(old_files[i]);
 
-#if 0
-		cout << *array[0] << *array[1];
-
-		const int result = array[0]->compare_with(*array[1]);
-
-		if( result > 0 )
-			cout << "o primeiro e maior que o segundo\n\n";
-
-		else if( result < 0 )
-			cout << "o primeiro e menor que o segundo\n\n";
-
-		else
-			cout << "os dois sao iguais\n\n";
-
-		 exit(0);	//O quick sort nao esta funcionando corretamente neste array, apesar da funcao de compare_with funcionar corretamente nos objetos...
-#endif
-
-		qsort(array,nb_rgstr,sizeof(Registro*),[]( const void* r1, const void* r2) noexcept -> int{ return static_cast<const Registro*>(r1)->compare_with( *static_cast<const Registro*>(r2) ); });
+		qsort(array,nb_rgstr,sizeof(Registro*),[]( const void* r1, const void* r2) noexcept -> int{ return ( *static_cast<const Registro* const*>(r1) )->compare_with( **static_cast<const Registro* const*>(r2) ); });
 
 		for( size_t j = 0; j != nb_rgstr; ++j){
 
