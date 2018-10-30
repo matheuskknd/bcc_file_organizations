@@ -27,7 +27,7 @@ int main( const int argc, char ** argv){
 
 	try{
 
-		if( argc < 2 )
+		if( argc != 2 )
 			throw "deve-se chamar esse programa com um parametro, que é o arquivo de CEPs a ser checado.";
 
 		FILE * const file = fopen(argv[1],"rb");
@@ -35,23 +35,18 @@ int main( const int argc, char ** argv){
 		if( file == nullptr )
 			throw "o arquivo requisitado não pode ser aberto para leitura.";
 
-		Registro * r1 = new Registro(file);
+		Registro * r1 = new Registro;
 		Registro * r2 = new Registro(file);
 
-		bool sorted=true;
-		size_t qtd;
+		bool sorted;
 
-		do{
-			if( *r1 > *r2 ){
+		while( r1->fill_reading_from(file) ){
 
-				sorted = false;
-				break;
-			}
-
-			qtd = r1->fill_reading_from(file);
 			swap(r1,r2);
 
-		}while( qtd != 0 );
+			if( !( sorted = *r1 <= *r2 ) )
+				break;
+		}
 
 		if( !sorted )
 			cout << "Este arquivo não está com todos os CEPs ordenados, foi encontrada um erro em:\n" << *r1 << *r2;

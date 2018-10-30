@@ -32,10 +32,8 @@ if (( "$#" != 1 )) ; then
 	echo -e "Tente de novo passando o arquivo de CEPs a ser checado.\n"
 else
 
-	if [ ! -f "$1" ] ; then
-
-		echo -e "O arquivo $1 não foi encontrado.\n"
-	fi
-
-	main "$1"
+	if [ -f "$1" ] ; then main "$1"; exit "$?"; fi
+	echo -e "O arquivo $1 não foi encontrado.\n"
 fi
+
+exit -1;
