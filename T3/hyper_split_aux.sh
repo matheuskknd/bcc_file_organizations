@@ -19,7 +19,7 @@ function main(){
 
 	mkdir 'splitters'
 
-	if [ ! -f 'hyper_splitter.cpp' ] || [ ! -f 'Registro.h' ] ; then
+	if [ ! -f 'hyper_splitter.cpp' ] || [ ! -f '../registro/Registro.h' ] ; then
 
 		echo -e "Código fonte não encontrado!\n"
 		encerrar

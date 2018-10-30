@@ -1,4 +1,4 @@
-#include"Registro.h"
+#include"../registro/Registro.h"
 
 #include<iostream>
 using std::cout;
@@ -7,7 +7,6 @@ using std::cout;
 using std::exit;
 
 #include<string>
-
 using std::to_string;
 using std::string;
 

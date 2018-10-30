@@ -28,7 +28,7 @@ return ;}
 //################################
 //################################
 //################################
-#include"Registro.h"
+#include"../registro/Registro.h"
 
 #include<cstdlib>
 using std::strtoul;

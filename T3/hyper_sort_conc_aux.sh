@@ -34,12 +34,12 @@ function main(){
 
 	mkdir 're_union';
 
-	if [ ! -f 'hyper_sort_concatenator.cpp' ] || [ ! -f 'Registro.h' ] || [ ! -f 'Registro.cpp' ] ; then
+	if [ ! -f 'hyper_sort_concatenator.cpp' ] || [ ! -f '../registro/Registro.h' ] || [ ! -f '../registro/Registro.cpp' ] ; then
 
 		echo -e "Código fonte não encontrado!\n"
 		encerrar
 	else
-		g++ -std=c++14 'hyper_sort_concatenator.cpp' 'Registro.cpp' -o 'hyper_sort_concatenator.run'
+		g++ -std=c++14 'hyper_sort_concatenator.cpp' '../registro/Registro.cpp' -o 'hyper_sort_concatenator.run'
 	fi
 
 	./hyper_sort_concatenator.run ${sub_files[@]}
